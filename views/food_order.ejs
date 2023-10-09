@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/food_order.css">
+    <link rel="stylesheet" href="/css/start.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <%- include('navbarmenu.ejs') -%>
+    <div class="food-container">
+        <% if(foodData) { %>
+            <% const foods = JSON.parse(foodData) %>
+            <% foods.forEach((food) => { %>
+                <div class="selected-food">
+                    <img src="<%= food.imgFood %>" alt="">
+                    <ul class="food-info" style="font-family: 'Dancing Script', cursive; color: orange;">
+                        <li style="text-decoration: underline;"><%= food.titleFood %></li>
+                        <li style="color: green;"><%= food.priceFood %></li>
+                        <li><b>x</b> <%= food.quantityFood %></li>
+                    </ul>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>no food data available</p>
+        <% } %>
+    </div>
+    <div class="total-div">
+        <h3>Price: <span><%= priceSum %></span></h3>
+    </div>
+    <div class="back-next">
+        <button class="back move-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+        <button class="next move-btn" onclick="moveToForm()">Next <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+    <script>
+        /* move from cart(food_order) -> add_form */
+        const moveToForm = () => {
+            window.location.href = '/additional_form';
+        }
+    </script>
+</body>
+</html>

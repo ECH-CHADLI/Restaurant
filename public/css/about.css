@@ -1,0 +1,22 @@
+/* who we are */
+.who-we-are {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    width: 70vw;
+    background-size: cover;
+    display: grid;
+    place-content: center;
+}
+.who-we-are-inside {
+    margin: 0 auto;
+    width: 80%;
+    backdrop-filter: blur(5px);
+    border-radius: 30px;
+    padding: 5%;
+}
+
+.myvideo{
+    position: fixed;
+    max-width: 100%;
+    max-height: 100%;
+}

@@ -1,0 +1,91 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    background: url('/img/backgroundfood.jpg') no-repeat center center / cover fixed;
+}
+
+.food-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 1fr is the available space */
+    grid-gap: 10px;
+}
+
+.selected-food {
+    width: 80%;
+    padding: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 0px 40px 0px;
+    transition: all 0.5s ease;
+}
+.selected-food:hover {
+    box-shadow: 0px 0px 50px 13px;
+}
+
+.selected-food img {
+    max-width: 100%; /* Set maximum width to 100% of the parent element */
+    max-height: 100%; /* Set maximum height to 100% of the parent element */
+    width: auto; /* Ensure the width is adjusted according to the aspect ratio */
+    height: auto;
+}
+
+.food-info {
+    text-align: center;
+}
+
+.food-info li {
+    list-style: none;
+}
+
+.total-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.total-div h3 {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* back and next buttons */
+.back-next {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.move-btn {
+    padding: 20px;
+    font-size: 18px;
+    color: white;
+    background-color: var(--orange);
+    border-color: var(--orange);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 10px 0 var(--orange);
+    border-radius: 20px;
+}
+.move-btn:hover {
+    border-radius: 50px 0 50px 0;
+    background-color: var(--orange);
+    box-shadow: 0 0 20px 0 var(--orange);
+    color: white;
+} 
+.back:hover {
+    border-radius: 0 50px 0 50px;
+}
+
+.back {
+    margin-right: 250px;
+}
+
+.next {
+    margin-left: 250px;
+}
