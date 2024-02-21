@@ -1,0 +1,53 @@
+.gallery {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+
+.pic1 {
+    width: 27vw;
+    height: 80vh;
+    background: url(../img/pic1.jpg) no-repeat;
+    background-size: cover;
+    transition: all 0.3s linear; /* Add transition property for all browsers */
+}
+
+.pic2 {
+    width: 27vw;
+    height: 80vh;
+    background: url(../img/pic2.jpg) no-repeat;
+    background-size: cover;
+    transition: all 0.3s linear; /* Add transition property for all browsers */
+}
+
+.pic3 {
+    width: 27vw;
+    height: 80vh;
+    background: url(../img/pic3.jpg) no-repeat;
+    background-size: cover;
+    transition: all 0.3s linear; /* Add transition property for all browsers */
+}
+
+/* Add hover transitions for all pic elements */
+.pic1:hover {
+    background: url(../img/pic4.jpg) no-repeat;
+    background-size: cover;
+}
+
+.pic2:hover {
+    background: url(../img/pic5.jpg) no-repeat;
+    background-size: cover;
+}
+
+.pic3:hover {
+    background: url(../img/pic6.jpg) no-repeat;
+    background-size: cover;
+}
+
+/* Add -webkit-transition for smooth transitions on older versions of Safari and Chrome */
+.pic1:hover,
+.pic2:hover,
+.pic3:hover {
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}

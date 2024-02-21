@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/food_order.css">
+    <link rel="stylesheet" href="/css/start.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <%- include('navbarmenu.ejs') -%>
+    <div class="food-container">
+        <% if(foodData) { %>
+            <% const foods = JSON.parse(foodData) %>
+            <% foods.forEach((food) => { %>
+                <div class="selected-food">
+                    <img src="<%= food.imgFood %>" alt="">
+                    <ul class="food-info" style="font-family: 'Dancing Script', cursive; color: rgb(37, 37, 37);">
+                        <li class="li_title"><%= food.titleFood %></li>
+                        <li class="li_price"><%= food.priceFood %></li>
+                        <li class="li_quantite"><b>x</b> <%= food.quantityFood %></li>
+                    </ul>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>no food data available</p>
+        <% } %>
+    </div>
+    <div class="total-div">
+        <h3>Price: <span><%= priceSum %>$</span></h3>
+    </div>
+    <div class="back-next">
+        <button class="back move-btn" onclick="back()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+        <button class="next move-btn" onclick="moveToForm()">Next <i class="fa-solid fa-arrow-right"></i></button>
+    
+    </div>
+    </div>
+    <script>
+        /* move from cart(food_order) -> add_form */
+        const moveToForm = () => {
+            window.location.href = '/additional_form';
+        
+        }
+        //back to menu
+        const back = () => {
+	window.location.href = '/menu?cartCreation=true';
+     }
+    </script>
+</body>
+</html>

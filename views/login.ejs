@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/about.css">
+    
+    <title>log-in</title>
+</head>
+<body>
+   
+
+   
+      
+    <form  action="/login" method="POST" class="log-in">
+        <h1> Log in to your account</h1>
+     <div class="dnt">    <span class="span"> Don't have an account?   <a href="/signup"> Sign Up </a></span></div>
+        <% if (errorMessag) { %>
+        <p style="color: red;margin-bottom:20px ;"><%= errorMessag %></p>
+      <% } %>
+       
+        <input placeholder="Email Address" name="email" type="text">
+        <input placeholder="Password" id="password" name="password" type="password">
+        <div style="display: flex;" class="show-pass">
+            <input id="showpassword" type="checkbox"> <p style="margin-left: 10px;">show password</p>
+        </div>
+        
+        <button>
+            <span class="circle1"></span>
+            <span class="circle2"></span>
+            <span class="circle3"></span>
+            <span class="circle4"></span>
+            <span class="circle5"></span>
+            <span class="text">  Log in</span>
+          </button>
+        <p>I forgot the <strong><a href="/resetpassword">password</a></strong></p>
+        <p>If you don't have an account <strong><a href="/signup">Sign up</a></strong></p>
+          
+    </form>
+    <%-include ('aboutls.ejs');-%>
+    <script src="/js/show-password.js"></script>
+</body>
+</html>

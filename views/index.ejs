@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Website Icon" type="png" href="/ressources/terrace-restaurant-logo-vector-removebg-preview.png">
+        <link rel="stylesheet" href="/css/start.css">
+        <link rel="stylesheet" href="/css/footer.css">
+        <link rel="stylesheet" href="/css/gallery.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Restaurant</title>
+    </head>
+<body>
+   <%-include ('navbar.ejs');-%>
+   <%-include ('landing-page.ejs');-%>
+   <%-include ('about.ejs');-%>
+   <%-include ('gallery.ejs');-%>
+   
+    <%-include ('pagemethod1.ejs');-%>
+   <%-include ('staff.ejs');-%>
+   <%-include ('footer.ejs');-%>
+    <script src="/js/code.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/navbarscrolled.js"></script>
+    <script>
+        const backtos = () => {
+	window.location.href = '/signup';
+  }
+    </script>
+</body>
+</html>

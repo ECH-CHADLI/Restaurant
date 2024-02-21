@@ -1,0 +1,326 @@
+[
+    {
+        "food": [
+            {
+                "cards": [
+                    {
+                        "imgSrc": "img/plat.png",
+                        "price": "$40",
+                        "title": "Antipasto",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate1.png",
+                        "price": "$42",
+                        "title": "PASTA",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate2.png",
+                        "price": "$25",
+                        "title": "Polenta",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate3.png",
+                        "price": "$20",
+                        "title": "Fettuccine Alfredo",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate4.png",
+                        "price": "$24",
+                        "title": "Arancini",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    }
+                ]
+            },
+            {
+                "cards": [
+                    {
+                        "imgSrc": "img/plate5.png",
+                        "price": "$9",
+                        "title": "Bruschetta",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate6.png",
+                        "price": "$27",
+                        "title": "Risotto",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate7.png",
+                        "price": "$55",
+                        "title": "Carbonara",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate8.png",
+                        "price": "$80",
+                        "title": "Ossobuco",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate9.png",
+                        "price": "$63",
+                        "title": "Tortellini",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    }
+                ]
+            },
+            {
+                "cards": [
+                    {
+                        "imgSrc": "img/plate10.png",
+                        "price": "$72",
+                        "title": "Ravioli",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate11.png",
+                        "price": "$24",
+                        "title": "Bistecca",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate12.png",
+                        "price": "$41",
+                        "title": "Gelato",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate13.png",
+                        "price": "$95",
+                        "title": "kouskous",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/plate14.png",
+                        "price": "$38",
+                        "title": "alla Fiorentina",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    }
+                ]
+            }
+]
+
+    },
+
+    {
+        "drinks": [
+            {
+                "cards": [
+                    {
+                        "imgSrc": "img/drink1.png",
+                        "price": "$21",
+                        "title": "Daiquiri",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/drink2.png",
+                        "price": "$20",
+                        "title": "Cider",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/drink3.png",
+                        "price": "$15",
+                        "title": "Tequila",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/drink4.png",
+                        "price": "$7",
+                        "title": "Martini",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    },
+                    {
+                        "imgSrc": "img/drink5.png",
+                        "price": "$11",
+                        "title": "Wine",
+                        "description": "tomato, mushrooms, cheeses, herbs, spices"
+                    }
+                ]
+            },
+            {
+                "cards": [
+                {
+                    "imgSrc": "img/drink10.png",
+                    "price": "$17",
+                    "title": "Gimlet",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink6.png",
+                    "price": "$13",
+                    "title": "Brandy",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink7.png",
+                    "price": "$7",
+                    "title": "Cosmopolitan",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink8.png",
+                    "price": "$5",
+                    "title": "Sake",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink9.png",
+                    "price": "$14",
+                    "title": "Gin",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                }
+                ]
+            },
+            {
+                "cards": [
+                {
+                    "imgSrc": "img/drink11.png",
+                    "price": "$6",
+                    "title": "White Russian",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink12.png",
+                    "price": "$8",
+                    "title": "Moscow mule",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink13.png",
+                    "price": "$15",
+                    "title": "coffé",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink14.png",
+                    "price": "$12",
+                    "title": "Bloody Mary",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/drink15.png",
+                    "price": "$10",
+                    "title": "Rickey",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                }
+                ]
+            }
+        ]
+        
+    },
+
+    {
+        "desserts": [
+        {   
+            "cards": [
+                {
+                    "imgSrc": "img/ds1.png",
+                    "price": "$20",
+                    "title": "Cheesecake",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/ds2.png",
+                    "price": "$34",
+                    "title": "Baked Alaska",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/ds3.png",
+                    "price": "$17",
+                    "title": "Chocolate cake",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/ds4.png",
+                    "price": "$16",
+                    "title": "Chocolate chip",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                    "imgSrc": "img/ds5.png",
+                    "price": "$19",
+                    "title": "Lemon meringue",
+                    "description": "tomato, mushrooms, cheeses, herbs, spices"
+                }
+            ]
+        },
+
+        {
+            "cards":[
+                {
+                "imgSrc": "img/ds6.png",
+                "price": "$13",
+                "title": "Apple pie",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds7.png",
+                "price": "$25",
+                "title": "Candy",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds8.png",
+                "price": "$15",
+                "title": "Key lime",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds9.png",
+                "price": "$32",
+                "title": "Coconut cake",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds10.png",
+                "price": "$21",
+                "title": "Battenberg",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                }
+            ]
+        },
+
+        {
+            "cards": [
+                {
+                "imgSrc": "img/ds11.png",
+                "price": "$18",
+                "title": "Cake",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds12.png",
+                "price": "$30",
+                "title": "Brownie",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds13.png",
+                "price": "$17",
+                "title": "Banana pudding",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds14.png",
+                "price": "$10",
+                "title": "Cobbler",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                },
+                {
+                "imgSrc": "img/ds15.png",
+                "price": "$28",
+                "title": "Brown Betty",
+                "description": "tomato, mushrooms, cheeses, herbs, spices"
+                }
+            ]
+        }
+        ]   
+    } 
+]

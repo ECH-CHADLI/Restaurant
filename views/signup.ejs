@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <link rel="stylesheet" href="/css/sign-upstyle.css">
+    <link rel="stylesheet" href="/css/abouts.css">
+</head>
+<body>
+    <div class="background1">
+        
+        <div class="who-we-are-inside">
+        
+            <div class="p-login">
+              <h2>TERRACE Restaurant</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates commodi, 
+                  nisi blanditiis tempora aut dolores quam ducimus quibusdam doloremque eaque. 
+                  Amet minus, rem pariatur incidunt nulla, aliquid, in vitae cumque similique 
+                  natus est fugit debitis numquam. Dolorum in laudantium incidunt id modi officia 
+                  porro at dicta, nemo sed magnam officiis ipsa fugiat sequi excepturi totam 
+                  laboriosam consectetur, quis quo. Earum.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad libero minus, 
+                  molestias aperiam quia labore recusandae aspernatur reprehenderit nemo temporibus!</p>
+          </div>  </div>
+    </div>
+    <div class="form">
+        <h1 class="text-w">Create your account</h1>
+        <span class="span">  Have an account?<a class="alink" href="/login"> Log in </a> now </span>
+        <form action="/signup" method="POST">
+            
+                   
+            <table class="signupf">
+                  
+                <tr>
+                    <th>
+                        <!-- Display first name error message -->
+                        <% if (errors.firstName) { %>
+                            <p style="color: red;font-size:medium;width: 100%;"><%= errors.firstName %></p>
+                        <% } %>
+                    </th>
+                    <th>
+                        <!-- Display last name error message -->
+                        <% if (errors.lastName) { %>
+                            <p style="color: red;font-size:medium;width: 100%;"><%= errors.lastName %></p>
+                        <% } %>
+                    </th>
+                </tr>
+                <tr>
+                    <td><input placeholder="First Name" type="text" name="firstName" class="input"></td>
+                    <td><input placeholder="Last Name" type="text" name="lastName" class="input"></td>
+                </tr>
+                <tr>
+                <td colspan="2">
+                        <!-- Display email error message -->
+                        <% if (errors.email) { %>
+                            <p style="color: red;font-size:medium;width: 100%;"><%= errors.email %></p>
+                        <% } %>
+                   </td> </tr>
+                <tr>
+                    <td colspan="2"><input placeholder="Email Address" name="email" type="email" class="input"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <!-- Display phone error message -->
+                        <% if (errors.phone) { %>
+                            <p style="color: red;font-size:medium;width: 100%;"><%= errors.phone %></p>
+                        <% } %>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2"><input placeholder="Phone"  name="phone" type="tel" class="input" pattern="[+][0-9]{12}"></td>
+                </tr>
+                <tr>
+                    <th>
+                        <!-- Display password error message -->
+                        <% if (errors.password) { %>
+                            <p style="color: red;font-size:medium;width: 100%;"><%= errors.password %></p>
+                        <% } %>
+                    </th>
+                    <th>
+                        <!-- Display confirm password error message -->
+                        <% if (errors.passwordconfirme) { %>
+                            <p style="color: red;font-size:medium;width: 100%;"><%= errors.passwordconfirme %></p>
+                        <% } %>
+                    </th>
+                </tr>
+                <tr>
+                    <td><input placeholder="Password" name="password" pattern="^.{8,}$" type="password" class="input"></td>
+                    <td><input placeholder="Confirm Password" name="passwordconfirme" type="password" class="input"></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <p>By clicking sign up below, you agree to our <a class="alink" href="#">Terms</a> and <a class="alink" href="#">Privacy Policy</a>.</p>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit" class="btn-sign-up">sign up</button></td>
+                </tr>  
+             
+            </table>
+        </form>
+    </div>
+    <div class="background2"></div>
+</body>
+</html>
