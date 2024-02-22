@@ -14,7 +14,7 @@ html {
 body {
     font-size: 18px;
     overflow-x: hidden;
-    
+    background-color: #FFC300;
 }
 
 .navbar {
@@ -174,36 +174,13 @@ body {
 }
 
 /* after nav */
-.info {
-    display: grid;
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    overflow: hidden;
-    width: 100vw;
-    position: absolute;
-    top: 0px;
-    z-index: 999;
-    padding: 15px 150px;
-}
-.h1-intro{
-    display: grid;
-}
-.slides input{
-    display: none;
-}
-.slide img{
-    clip: rect( 0, 250px, 125px, 0 );
-    position: absolute;
-    left: 0;
-    top:0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
 .container{
     position: relative;
-height: 100vh;
-width: max-content;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .container::before{
     position: absolute;
@@ -214,33 +191,42 @@ width: max-content;
     width:100%;
     backdrop-filter: blur(2px);
 }
-
 .slides{
     height: 100vh;
     display: flex;
     overflow: hidden;
 }
-.slide{
-    width: 100VW;
-    height: max-content;
-    transition: 2s;
-}
-.slide img{
-    position: relative;
+.slide {
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
     width: 100%;
-    height: 100vh;
     z-index: 0;
+    object-fit: cover;
+    clip-path: circle(0% at 0 50%);
+}
+.slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s ease;
+    transition-property: clip-path;
 }
 /* manual botton for landing images */
+.global-nav{
+    height: 100vh;
+    width: 100px;
+    display: grid;
+    align-items: center;
+}
 .manual-nav{
     position: absolute;
-    display: flex;
-    bottom: 50px;
-    width: 100vw;
-    justify-content: center;
+    right: 0px;
+    height: 50vh;
+    display: grid;
+    align-items: center;
 }
 .manual-btn:not(:last-child){
-    margin-right: 40px;
+    margin-bottom: 20px;
 }
 .manual-btn{
     border: #ffffff 2px solid;
@@ -250,27 +236,35 @@ width: max-content;
     transition: 1s;
     position: relative;
     z-index: 999;
+    margin-right: 40px;
+}
+.manual-btn.active{
+    background-color: #ffffff;
 }
 .manual-btn:hover{
     background-color: #ffffff;
 }
-#radio1:checked ~ .first{
-    margin-left: 0px;
+.info {
+    display: grid;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    overflow: hidden;
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    z-index: 778;
+    padding: 15px 150px;
 }
-#radio2:checked ~ .first{
-    margin-left: -20%;
-}
-#radio3:checked ~ .first{
-    margin-left: -40%;
-}
-#radio4:checked ~ .first{
-    margin-left: -60%;
-}
-#radio5:checked ~ .first{
-    margin-left: -80%;
+.h1-intro{
+    display: grid;
 }
 
-/* automatic botton for landing images */
+
+
+
+
+
+/* automatic botton for landing images
 .auto-nav{
     position: absolute;
     display: flex;
@@ -305,7 +299,7 @@ width: max-content;
 }
 #radio5:checked ~ .auto-nav .auto-btn5{
     background-color: #ffffff;
-}
+} */
 
 .h2-landingpage{
     color: #FFC300;
