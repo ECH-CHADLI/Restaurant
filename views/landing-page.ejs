@@ -1,46 +1,99 @@
 
    <div class="container">
-    <div class="slides">
-            <img class="slide active" src="/img/img_landing1.jpg"> 
-            <img class="slide" src="/img/img_landing2.jpg"> 
-            <img class="slide" src="/img/img_landing3.jpg">
-            <img class="slide" src="/img/img_landing4.jpg">
-            <img class="slide" src="/img/img_landing5.jpg">
-        <div class="global-nav">
-    <div class="manual-nav">
+<div class="slides">
+            <video autoplay loop muted  class="slide active" src="/img/view.mp4"></video>
+            <video autoplay loop muted  class="slide " src="/img/service.mp4"></video>
+            <video autoplay loop muted  class="slide " src="/img/clean.mp4"></video>
+            <video autoplay loop muted  class="slide " src="/img/price.mp4"></video>
+            <video autoplay loop muted  class="slide " src="/img/food.mp4"></video>
+            
+<div class="global-nav">
+<div class="manual-nav">
         <div  class="manual-btn active"></div>
         <div  class="manual-btn"></div>
         <div  class="manual-btn"></div>
         <div  class="manual-btn"></div>
         <div  class="manual-btn"></div>
-    </div></div>
-   </div>
-    <div class="info" id="navbar">
+</div>
+</div>
+</div>
+    <div class="info active" id="navbar">
         <div class="intro hidden-intro">
-          <div class="h1-intro">  <h1>BEAUTIFUL <br> RESTAURANT</h1></div>
+          <div class="h1-intro">  <div class="services">Amazing  <br> View </div></div>
             <p class="desc">Lorem ipsum dolor sit amet, 
                 consectetur adipisicing elit. Sapiente, totam? Quae ab necessitatibus, 
                 similique exercitationem iure deleniti laudantium distinctio minima!</p>
-        </div>
-        <div class="reservations hidden-rev">
-            <div class="reserve-sect hide">
+    </div></div>
+    <div class="info" id="navbar">
+            <div class="intro hidden-intro">
+              <div class="h1-intro">  <div class="services">Perfect  <br>Service</div></div>
+                <p class="desc">Lorem ipsum dolor sit amet, 
+                    consectetur adipisicing elit. Sapiente, totam? Quae ab necessitatibus, 
+                    similique exercitationem iure deleniti laudantium distinctio minima!</p>
+    </div></div>
+    <div class="info" id="navbar">
+        <div class="intro hidden-intro">
+          <div class="h1-intro">  <div class="services">Cleanliness<br> place</div></div>
+            <p class="desc">Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. Sapiente, totam? Quae ab necessitatibus, 
+                similique exercitationem iure deleniti laudantium distinctio minima!</p>
+        </div></div>
+    <div class="info" id="navbar">
+        <div class="intro hidden-intro">
+          <div class="h1-intro">  <div class="services">Reasonable  <br>Prices </div></div>
+            <p class="desc">Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. Sapiente, totam? Quae ab necessitatibus, 
+                similique exercitationem iure deleniti laudantium distinctio minima!</p>
+        </div></div>
+        <div class="info" id="navbar">
+        <div class="intro hidden-intro">
+          <div class="h1-intro">  <div class="services">The finest<br>Food</div></div>
+            <p class="desc">Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. Sapiente, totam? Quae ab necessitatibus, 
+                similique exercitationem iure deleniti laudantium distinctio minima!</p>
+        </div></div>
+
+
+
+
+
+
+
+        <div class="reservations hidden-rev"> 
+            <div class="reserve-sect hide"> 
                 
                 <form>
                     <div class="select-div">
+                        <div class="select-title"><span class="select-title-inside"><i class="fa-solid fa-person"></i>How many ? </span>
                         <select name="num-people" class="select-table" id='br-px'>
+                            <option selected disabled>Choose one</option>
                             <option value="1">1 person</option><option value="2">2 people</option>
                             <option value="3">3 people</option><option value="4">4 people</option>
                             <option value="5">5 people</option><option value="6">6 people</option>
                         </select> 
-                    </div>
+                    </div> </div>
                     
                     <div class="select-div">
-                        <select name="time" class="select-table" id="time">   
-                        </select>
+                        <div class="select-title"><span class="select-title-inside"><i class="fa-solid fa-clock"></i>When ? </span>
+                        <select name="time" class="select-table" id="time">  
+                            <option selected disabled>Anytime</option>
+                        </select></div>
                     </div>
-                    
-                    <input type="date" class="select-table" id="select-date">
-                  <button class="reserve-btn" onclick="backtos()"> Book your table</button> 
+                    <div class="select-div">
+                        <div class="select-title"><span class="select-title-inside"><i class="fa-solid fa-calendar-days"></i>Anyday ? </span>
+                    <input type="date" class="select-table" id="select-date"></div>
+                </div> <div class="select-div">
+                  <button class="button">
+                    Book your table
+                    <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                      <path
+                        clip-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                        fill-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </button></div>
+                  
                 </form>
             </div>
         </div>

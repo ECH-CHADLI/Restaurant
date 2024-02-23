@@ -14,7 +14,7 @@ html {
 body {
     font-size: 18px;
     overflow-x: hidden;
-    background-color: #FFC300;
+    background-color: #161616;
 }
 
 .navbar {
@@ -26,11 +26,11 @@ body {
     width: 100vw;
     position: fixed;
     z-index: 1999;
-    padding: 15px 150px;
+    padding: 15px 70px;
     transition: all 0.5s ease-in-out;
 }
 .navbar.scrolled{
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.733);
     backdrop-filter: blur(8px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -90,10 +90,11 @@ body {
 /* login and signup */
 .login, .signup {
     background-color: transparent;
-    color: #FFC300;
+    color: #000000;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;
+    background-color: #ffffff;
     transition: all 0.3s ease-in-out;
     border: 1px solid rgb(255, 255, 255);
   }
@@ -103,6 +104,7 @@ body {
   
   .login:hover, .signup:hover {
     color: #ffffff;
+    background-color: #000000;
   }
   
   .login:active, .signup:active {
@@ -184,9 +186,9 @@ body {
 }
 .container::before{
     position: absolute;
-    z-index: 777;
+    z-index: 2;
     content: '';
-    background-color:#ffc4001a;
+    background-color:#0000008a;
     height: 100%;
     width:100%;
     backdrop-filter: blur(2px);
@@ -210,6 +212,7 @@ body {
     clip-path: circle(150% at 0 50%);
     transition: 2s ease;
     transition-property: clip-path;
+    display: block;
 }
 /* manual botton for landing images */
 .global-nav{
@@ -235,7 +238,7 @@ body {
     cursor: pointer;
     transition: 1s;
     position: relative;
-    z-index: 999;
+    z-index: 5;
     margin-right: 40px;
 }
 .manual-btn.active{
@@ -245,20 +248,93 @@ body {
     background-color: #ffffff;
 }
 .info {
-    display: grid;
     font-size: 20px;
     color: rgb(0, 0, 0);
     overflow: hidden;
     width: 100vw;
     position: absolute;
-    top: 0px;
-    z-index: 778;
-    padding: 15px 150px;
+    top: 20vh;
+    z-index: 3;
+    padding: 15px 100px;
+    display: none;
+}
+.info.active{
+    
+    display: flex;
 }
 .h1-intro{
     display: grid;
 }
-
+.button {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding-block: 0.5rem;
+    padding-inline: 1.25rem;
+    background-color: rgb(26, 26, 26);
+    border-radius:  0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffff;
+    gap: 10px;
+    font-weight: bold;
+    border: 1px solid #ffffff4d;
+    border-width:1px ;
+    outline: none;
+    overflow: hidden;
+    font-size: 15px;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .button:hover {
+    border-color: #fff9;
+  }
+  
+  .button:hover .icon {
+    transform: translate(4px);
+  }
+  
+  .button:hover::before {
+    animation: shine 1.5s ease-out infinite;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100%;
+    background-image: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0) 70%
+    );
+    top: 0;
+    left: -100px;
+    opacity: 0.6;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100px;
+    }
+  
+    60% {
+      left: 100%;
+    }
+  
+    to {
+      left: 100%;
+    }
+  }
+  
 
 
 
@@ -315,8 +391,7 @@ body {
 }
 
 .intro {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    display: flex;
     margin-bottom: 30px;
     position: relative;
     top: 30%;
@@ -324,19 +399,29 @@ body {
 .intro h1{
     font-size: 3em;
     text-transform: uppercase;
-    color: #FFC300;
+    color: #ffffff;
     letter-spacing: 5px;
     font-weight: 900;
     margin-bottom: 40px;
+    margin-right: 40px;
 }
 .intro p{
     color:#ffffff;
 }
 .intro h1, .intro .desc {
     display: flex;
-
+    justify-content: end;
+    align-items: end;
+    position: RELATIVE;
+    left: 100px;
 }
-
+.services{
+    width: max-content;
+    color: white;
+    font-size: 70px;
+    font-weight: 900;
+    letter-spacing: 5px;
+}
 /* hidden stuff */
 .hidden-intro {
     opacity: 0;
@@ -346,13 +431,13 @@ body {
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(100%);
+    transform: translateY(-100%);
     transition: all 1.5s;
 }
 .hidden-rev {
     opacity: 0;
     filter: blur(5px);
-    transform: translateX(100%);
+    transform: translateX(-100%);
     transition: all 1.5s;
 }
 .hidden--y {
@@ -405,12 +490,12 @@ body {
     justify-content: center;
     align-content: center;
     margin-top: 10px;
-   width: max-content;
-   position: relative;
-   left: 0;
+   position: absolute;
+    bottom: 20Vh;
+   width: 100vw;
+   z-index: 4;
 }
 .reserve-sect{
-    background-color: rgb(14, 14, 14, 0.92);
     padding: 24px 40px;
     border-radius: 20px;
 }
@@ -451,20 +536,37 @@ form {
 }
 
 .select-table{
-    border-top: none;
-    border-bottom: none; 
-    border-left: none;
     background-color: white;
-    opacity: 0.8;
-    font-size: 20px;
-    padding: 15px 20px;
+    font-size: 16px;
+    padding: 0px 6VW ;
+    color: #878585;
+    cursor: pointer;
 }
-
+.select-table:focus{
+    outline: none;
+}
+ .select-div:last-child{
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #ffffff;
+} 
 .select-table {
-    border-right: 0.1px solid  rgba(0, 0, 0, 0.5);
-    height: 60px;
+    height: 40px;
+    border: inherit;
 }
-
+.select-title{
+    display: grid;
+    background-color: #ffffff;
+}
+.select-title-inside {
+    font-size: medium;
+    color: #878585;
+}
+.select-title-inside i{
+    padding: 20px 20px 0px 20px;
+    color: rgb(0, 0, 0);
+}
 #br-px {
     border-radius: 5px 0 0 5px;
 }
