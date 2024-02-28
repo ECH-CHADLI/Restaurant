@@ -48,8 +48,10 @@ body {
 .links a {
     text-decoration: none;
     color: rgb(228, 228, 228); 
-    font-weight: 400; 
-    font-size: 1em;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700; 
+    font-size: 16px;
+    letter-spacing: -0.4px;
 }
 .links a:not(:last-child) {
     margin-right: 20px; 
@@ -83,8 +85,10 @@ body {
     width: 95px;
     text-transform: uppercase;
     color: #dadada;
-    font-size: 1.5em;
-    font-weight: 700;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700; 
+    font-size: 23.25px;
+    letter-spacing: -0.5px;
 }
 
 /* login and signup */
@@ -224,28 +228,35 @@ body {
 .manual-nav{
     position: absolute;
     right: 0px;
-    height: 50vh;
+    height: 30vh;
     display: grid;
     align-items: center;
 }
-.manual-btn:not(:last-child){
+/* .manual-btn:not(:last-child){
     margin-bottom: 20px;
-}
+} */
 .manual-btn{
     border: #ffffff 2px solid;
-    border-radius: 8px;
-    padding: 5px;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    background-color: #ffffff;
     cursor: pointer;
     transition: 1s;
     position: relative;
     z-index: 5;
     margin-right: 40px;
+    transition: 0.3S ease-in;
+
 }
 .manual-btn.active{
     background-color: #ffffff;
+    transform: scale(1.9);
+    transition: 0.3S ease-out;
 }
 .manual-btn:hover{
     background-color: #ffffff;
+
 }
 .info {
     font-size: 20px;
@@ -263,7 +274,24 @@ body {
     display: flex;
 }
 .h1-intro{
-    display: grid;
+    width: max-content;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 700; 
+    font-size: 80px;
+    line-height: 80%;
+}
+.desc {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: RELATIVE;
+    left: 100px;
+    font-family: "DM Sans", sans-serif;
+    color: #ffffffab;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.6px;
 }
 .button {
     position: relative;
@@ -405,10 +433,7 @@ body {
     margin-bottom: 40px;
     margin-right: 40px;
 }
-.intro p{
-    color:#ffffff;
-}
-.intro h1, .intro .desc {
+.desc {
     display: flex;
     justify-content: end;
     align-items: end;
@@ -416,11 +441,7 @@ body {
     left: 100px;
 }
 .services{
-    width: max-content;
-    color: white;
-    font-size: 70px;
-    font-weight: 900;
-    letter-spacing: 5px;
+    display: grid;
 }
 /* hidden stuff */
 .hidden-intro {
@@ -431,7 +452,7 @@ body {
 .hidden {
     opacity: 0;
     filter: blur(5px);
-    transform: translateY(-100%);
+    transform: translateY(100%);
     transition: all 1.5s;
 }
 .hidden-rev {
@@ -449,7 +470,7 @@ body {
 .hidden--x {
     opacity: 0;
     filter: blur(5px);
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: all 1.5s;
 }
 
@@ -537,10 +558,13 @@ form {
 
 .select-table{
     background-color: white;
-    font-size: 16px;
     padding: 0px 6VW ;
     color: #878585;
     cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
 }
 .select-table:focus{
     outline: none;
@@ -560,8 +584,11 @@ form {
     background-color: #ffffff;
 }
 .select-title-inside {
-    font-size: medium;
-    color: #878585;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: -0.5px;
 }
 .select-title-inside i{
     padding: 20px 20px 0px 20px;
@@ -715,69 +742,3 @@ a {
     margin-bottom: 20px;
 }
 
-/* who we are */
-.who-we-are {
-    color: rgb(0, 0, 0);
-    font-size: 30px;
-}
-.who-we-are-inside {
-    display: grid;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 60vh;
-    margin: 80px;
-
-}
-.who-we-are h2 {
-    display: flex;
-    justify-content: center;
-}
-.who-we-are P {
-    display: flex;
-    justify-content: center;
-    font-size: medium;
-    width: 80vw;
-    margin: 50px auto;
-}
-.logo-about-div{
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-}
-.logo-about{
-    max-width: 200px;
-    max-height: 100px;
-    
-    
-}
-
-@media (max-width: 1000px){
-    .who-we-are-inside {
-        font-size: 25px;
-        flex-direction: column;
-        height: 120vh;
-    }
-    .who-we-are img {
-        height: 450px;
-        width: 500px;
-        object-fit: cover;
-        margin-bottom: 50px;
-    }
-}
-@media (max-width: 600px){
-    .who-we-are-inside {
-        height: 100vh;
-    }
-    .who-we-are-inside div {
-        font-size: 20px;
-        margin: -50px;
-    }
-    .who-we-are img {
-        height: 350px;
-        width: 350px;
-        margin-bottom: 100px;
-        margin-top: 70px;
-        margin-left: 50px;
-    }
-}

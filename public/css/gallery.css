@@ -1,53 +1,253 @@
 .gallery {
+    
+    height: 130vh;
+    width: 100vw;
     display: flex;
-    justify-content: space-evenly;
-    margin: 20px auto;
+    justify-content: center;
 }
+.title{
+    padding: 20px;
+}
+.laft{
+    position: absolute;
+    display: flex;
+    z-index: 12;
+    WIDTH: 120PX;
+    right: 0%;
+    top: 186VH;
+    opacity: 0.34;
+}
+.palm{
+    position: absolute;
+    display: flex;
+    z-index: -12;
+    WIDTH: 180PX;
+    left: 20%;
+    top: 189VH;
+    opacity: 0.34;
+}
+.palm2{
+    position: absolute;
+    display: flex;
+    z-index: -12;
+    WIDTH: 171px;
+    left: 6%;
+    top: 98VH;
+    opacity: 0.34;
+}
+.palm3{
+    position: absolute;
+    display: flex;
+    z-index: -12;
+    WIDTH: 171px;
+    left: -2%;
+    top: 112VH;
+    opacity: 0.34;
+}  
+.pic{
+   display: flex;
+   margin: auto 70px;
+   width: 100vw;
+   justify-content: space-between;
 
-.pic1 {
-    width: 27vw;
+}
+.left{
+    width: 20vw;
     height: 80vh;
-    background: url(../img/pic1.jpg) no-repeat;
+    background: url(../img/picl1.jpg) no-repeat;
     background-size: cover;
     transition: all 0.3s linear; /* Add transition property for all browsers */
+    border-radius: 10px;
+    cursor: pointer;
 }
-
-.pic2 {
-    width: 27vw;
+.left:hover{
+    transform: scale(1.02);
+}
+.left::before{
+    content: "";
+    z-index: 10000;
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.034);
+    width: 20vw;
     height: 80vh;
-    background: url(../img/pic2.jpg) no-repeat;
-    background-size: cover;
-    transition: all 0.3s linear; /* Add transition property for all browsers */
-}
+    border-radius: 10px;
 
-.pic3 {
-    width: 27vw;
+}
+.left:hover::before{
+    content: "“The secret ingredient is always love.”";
+    z-index: 10000;
+    display: flex;
+    background-color:rgba(0, 0, 0, 0.705);
+    width: 20vw;
     height: 80vh;
-    background: url(../img/pic3.jpg) no-repeat;
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    text-shadow: black 0px 0px 77px 67px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    border-radius: 10px;
+}
+.sec{
+    display: grid;
+    height: max-content;
+    width: max-content;
+}
+.sec1 div ,.sec2 div{
+    margin:10px;
+}
+.h1-gallery{
+    color: aliceblue;
+    font-family: "DM Sans", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+ .h1-gallery::before{
+    content: "";
+    width: 100px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,0,0,1) 100%);
+    height: 3px;
+    position: absolute;
+    margin-bottom: 45px;
+}
+.title p{
+    color: rgba(219, 219, 219, 0.644);
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.6px;
+}
+/* .right{
+    width: 20vw;
+    height: 80vh;
+    background: url(../img/picr1.jpg) no-repeat;
     background-size: cover;
-    transition: all 0.3s linear; /* Add transition property for all browsers */
+    transition: all 0.3s linear; 
+    border-radius: 10px;
+
+}
+.right:hover{
+    transform: scale(1.02);
+}
+.right::before{
+    content: "";
+    z-index: 10000;
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.075);
+    width: 20vw;
+    height: 80vh;
+    border-radius: 10px;
+}
+.right:hover::before{
+    content: "“Food is not just eating energy.It’s an experience.”";
+    z-index: 10000;
+    display: flex;
+    background-color:transparent;
+    width: 20vw;
+    height: 80vh;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+} */
+.sec1{
+    display: flex;
+    justify-content: center;
+}
+.sec2{
+    display: flex;
+    justify-content: center;
+}
+.pic1 img{
+    width:  130px;
+    height: 130px;
+    transition: all 0.3s linear; 
 }
 
-/* Add hover transitions for all pic elements */
-.pic1:hover {
-    background: url(../img/pic4.jpg) no-repeat;
-    background-size: cover;
-}
-
-.pic2:hover {
-    background: url(../img/pic5.jpg) no-repeat;
-    background-size: cover;
-}
-
-.pic3:hover {
-    background: url(../img/pic6.jpg) no-repeat;
-    background-size: cover;
-}
-
-/* Add -webkit-transition for smooth transitions on older versions of Safari and Chrome */
-.pic1:hover,
-.pic2:hover,
-.pic3:hover {
-    -webkit-transition: all 0.3s linear;
+.pic2 img{
+    width:  160px;
+    height: 160px;
     transition: all 0.3s linear;
 }
+
+.pic3 img{
+    width:  160px;
+    height: 160px;
+    transition: all 0.3s linear; 
+}
+.pic4 img{
+    width:  130px;
+    height: 130px;
+    transition: all 0.3s linear;
+}
+.pic1{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.pic2{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+}
+.pic3{
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+.pic4{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+.pic1,
+.pic2,
+.pic3,
+.pic4{
+    width: 160px;
+    height: 160px;
+}
+/* botton
+.seemore{
+    height: 10vh;
+    width: 100%;
+}
+.btn{
+    color:purple;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:2px solid purple;
+    padding:10px 20px ;
+    font-size:17px;
+    font-weight:bold;
+    background:transparent;
+    position:relative;
+    -webkit-transition:all 1s;
+    transition:all 1s;
+    overflow:hidden;
+  }
+  .btn:hover{
+    color:white;
+  }
+  .btn::before{
+    content:'';
+    position:absolute;
+    height:100%;
+    width:0%;
+    top:0;
+    left:-40px;
+    -webkit-transform:skewX(45deg);
+        -ms-transform:skewX(45deg);
+            transform:skewX(45deg);
+    background-color:purple;
+    z-index:-1;
+    -webkit-transition:all 1s;
+    transition:all 1s;
+  }
+  .btn:hover::before{
+    width:160%;
+  } */
