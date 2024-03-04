@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="Website Icon" type="png" href="/ressources/terrace-restaurant-logo-vector-removebg-preview.png">
+        <link rel="stylesheet" href="/css/start.css">
+        <link rel="stylesheet" href="/css/menustyle.css">
+        <link rel="stylesheet" href="/css/loader.css">
+        <!-- <link rel="stylesheet" href="/css/footer.css"> -->
+        <!-- <link rel="stylesheet" href="/css/gallery.css"> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Restaurant</title>
+    </head>
+<body>
+ <div id="loader">
+        <div class="loader"></div>
+    </div>
+    <div class="all-all-menu" style="display: flex; background:url('img/food_background.jpg'); background-size:cover; flex-direction: column; height: 100vh;" data-cart-creation="<%= cartCreation %>">
+        <%- include('navbarmenu.ejs') -%>
+        <div style="display: flex; height: 100vh" class="all-menu">
+            <div class="menu-dv">
+               <!-- <div id="menu-div" style="writing-mode:vertical-lr;font-family: 'Dancing Script', cursive;text-orientation:upright; display: flex;justify-content: center;align-items: center; width:8vw;height:91.7vh;border-right: 1px solid rgb(94, 91, 91);background-color: black;color: white;"><h1 >MENU</h1></div>-->
+            </div>
+            <section class="menu" id="menu">
+                <div class="menu-categorie" id="menu-categorie">
+                    <ul class="ul-menu">
+                        <li class="li-menu"> <img src="img/plate.png" alt="" class="cate-img">Food</li>
+                        <li class="li-menu"> <img src="img/drink.png" alt="" class="cate-img">Drink</li>
+                        <li class="li-menu"> <img src="img/dessert.png" alt="" class="cate-img">Dessert</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <% if(cartCreation === 'true') { %>
+            <div class="back-next">
+                <button class="back move-btn" onclick="back()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <button class="next move-btn" onclick="addInfoLocalStorage()">Next <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        <% } %>
+    </div>
+    <!-- <script src="/js/code.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="/js/menuscript.js"></script>
+    <!-- <script src="/js/navbarscrolled.js"></script> -->
+</body>
+</html>

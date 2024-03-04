@@ -1,0 +1,118 @@
+/* who we are */
+.entete{
+    height: 20vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    background-color: #080808;
+}
+.entete h1{
+    color: white;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    width: max-content;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    padding-left: 70px;
+}
+.entete h1::before{
+    content: "";
+    width: 50px;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(0, 0, 0) 100%);
+    height: 3px;
+    position: absolute;
+    left: 70PX;
+    margin-bottom: 45px;
+}
+.who-we-are {
+    color: rgb(255, 255, 255);
+    display: flex;
+    width: 100vw;
+    height: 90vh;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #080808;
+    padding-bottom: 10vh;
+}
+.who-we-are-inside:first-child{
+    background: url(../img/aboutus.jpg) no-repeat;
+    height: 70vh;
+    background-size: cover;
+    width: 100vw;
+    border-radius: 10px 0px 0px 10px;
+    display: grid;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+}
+.who-we-are-inside:nth-child(2) {
+    display: grid;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    height: 55vh;
+    width: 40%;
+    position: absolute;
+    right: 30px;
+    background-color: black;
+    /* border-radius: 30PX; */
+}
+.who-we-are-inside:nth-child(2)::after{
+    content: "";
+    width: 5PX;
+    height: 55vh;
+    background-color: azure;
+    position: absolute;
+    right: 0px;
+    border-radius:  0px 20px 20px 0px ;
+}
+.who-we-are-inside h1 {
+    display: flex;
+    justify-content: center;
+    height: 20px;
+}
+.who-we-are-inside P {
+    display: flex;
+    justify-content: center;
+    font-size: medium;
+    color: rgb(255, 255, 255);
+    height: 100%;
+    width: 80%;
+    text-align: left;
+}
+@media (max-width: 1000px){
+    .who-we-are-inside {
+        font-size: 25px;
+        flex-direction: column;
+        height: 120vh;
+    }
+    .who-we-are img {
+        height: 450px;
+        width: 500px;
+        object-fit: cover;
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 600px){
+    .who-we-are-inside {
+        height: 100vh;
+    }
+    .who-we-are-inside div {
+        font-size: 20px;
+        margin: -50px;
+    }
+    .who-we-are img {
+        height: 350px;
+        width: 350px;
+        margin-bottom: 100px;
+        margin-top: 70px;
+        margin-left: 50px;
+    }
+}

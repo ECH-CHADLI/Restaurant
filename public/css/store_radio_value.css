@@ -1,0 +1,257 @@
+/*restaurant plan css*/
+.body-page{
+    background:url(../img/bg.jpg) no-repeat center center/cover;
+    height: 100vh;
+}
+.body-page h2{
+    color: rgb(255, 255, 255);
+    width: 20vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: #000000;
+   border-top: #ffffff solid 2px;
+   font-size: 10px;
+   border-radius: 10PX 10PX 0PX 0PX;
+}
+.body-page h2:nth-child(1){
+   background-color: #000000;
+   color: #ffffff;
+   border-top: #ffffff solid 2px;
+}
+.bodyflex{
+    display: flex;
+    height: 80vh;
+    align-items: center;
+}
+.restauplanglobal{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+}
+.restauimg{
+    width: 45vw;
+    height: 60vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    background-color:rgba(0, 0, 0, 0.452);
+    scroll-behavior: smooth;
+    transition: 1s linear;
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
+    border: rgb(0, 0, 0) solid 2px;
+
+}
+.icon-label {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .icon {
+    width: 50px;
+    height: 50px;
+  }
+.restauimg::-webkit-scrollbar{
+    display: none;
+}
+
+.imgglobal{
+    height: 50vh;
+    width: 40vw;
+
+    padding:20px  0px 20px 5vw;
+    transition: 1s ease-in-out;
+}
+.backplan{
+    width: 45vw;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.452);
+    border-radius: 0px 0px 20px 20px;
+    border: rgb(0, 0, 0) solid 2px;
+    backdrop-filter:blur(5px);
+}
+.key h3{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 20%;
+    align-items: center;
+}
+.restauplan{
+    width: 40vw;
+    height: 50vh;
+    background:url(../img/r-plan.png) no-repeat center / 100% 100%;
+    
+  }
+  .background-plan{
+    width: 50vw;
+    height: 90vh;
+  } 
+  .restauplan h2{
+   padding:  20px 0vw  20px 20vw;
+  }
+  .keys{
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    
+  }
+ .key{
+    height: 20vh;
+    width: 45vw;
+    border-radius: 0px 0px 20px 20px;
+    background-color: rgb(255, 255, 255);
+    border: orange solid 1px;
+ }
+ .key table{
+    height: 50%;
+    width: 100%;
+ }
+ 
+ use{
+    fill:  rgb(255, 255, 255);
+    stroke:  rgb(0, 0, 0); 
+    position: relative;
+    top: 5%;
+    left: 5%;
+    cursor: pointer;
+ }
+#s:checked ~ .icons use {
+    fill:  rgb(0, 0, 0);
+    stroke: rgb(0, 0, 0);
+ }
+ #l:checked ~ .iconl use {
+    fill:  rgb(0, 0, 0);
+    stroke: rgb(0, 0, 0);
+}
+#l:checked ~ .iconc use {
+    fill:  rgb(0, 0, 0);
+    stroke: rgb(0, 0, 0);
+ }
+ input{
+    display: none;
+ }
+
+  
+  
+.iconl{
+    width: 2.5vw;
+ }
+ .iconm{
+    width: 2vw;
+ }
+ span{
+    display: flex;
+    justify-content:flex-start;
+ }
+ .use2{
+    cursor: default;
+    fill: #ffffff;
+ }
+.icons{
+    width: 3vw;
+    height: 9vh;
+ }
+ .iconc{
+    width: 4.8vw;
+ }
+ .line1{
+    width: 10vw;
+    display: flex;
+    justify-content: space-between;
+ }
+.line2{
+    display: grid;
+}
+.lines2{
+    display: flex;
+    height: 30%;
+}
+.line2-3{
+    display: grid;
+}
+.lines3{
+    display: flex;
+    height: 40%;
+}
+.line3{
+    display: grid;
+}
+.line3-2{
+    display: grid;
+}
+.line3-3{
+    display: flex;
+    align-items: end;
+}
+.line3-4{
+    display: flex;
+    align-items: end;
+    height: 100%;
+}
+button {
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+    width: 100px;
+    background-color: #000000;
+  }
+  
+  button > svg {
+    margin-left: -5px;
+    transition: all 0.4s ease-in;
+  }
+  button > svg:nth-child(2) {
+    margin-left: 5px;
+    transition: all 0.4s ease-in;
+  }
+  .span-back{
+    padding-left: 8px;
+    color: white;
+  }
+  .span-next{
+    padding-right: 10px;
+    color: white;
+  }
+  button:hover > svg {
+    font-size: 1.2em;
+    transform: translateX(-6px);
+  }
+  button:hover > svg:nth-child(2) {
+    font-size: 1.2em;
+    transform: translateX(6px);
+  }
+  button:hover {
+    box-shadow: 10px 10px 40px #d1d1d1;
+    transform: translateY(-5px);
+  }
+  .control-b{
+    position: relative; 
+  }
+  .next-btn{
+    position: absolute;
+    right: 4%;
+    cursor: pointer;
+    top: 20px;
+    display: flex;
+  }
+  .back-btn{
+    position: absolute;
+    left: 4%;
+    cursor: pointer;
+   top: 20px;
+   display: flex;
+  }
+  .a-button{
+    display: flex;
+  }

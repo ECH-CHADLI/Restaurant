@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/seats_form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="all_form">
+    <div class="pic-form">
+        <div class="pic">
+            <img src="https://images.pexels.com/photos/6612281/pexels-photo-6612281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+        </div>
+        <div class="form">
+            <div class="title-form">
+                
+                <h1 class="addinfo">Additional infomation</h1>
+            </div>
+            <form action="">
+                <label for="">Do you have any allergies?</label>
+                <input type="text" name="allergies" id="" />
+                <label for="">is this a special occasion?</label>
+                <input type="text" name="special_occ">
+                <label for="">Do you have any special requests for our chefs and/or our waiters?</label>
+                <textarea name="requests" id="" cols="30" rows="10"></textarea>
+            </form>
+        </div>
+    </div>
+    <div class="back-next">
+        <button class="back move-btn" onclick="back()"><i class="fa-solid fa-arrow-left"></i> Back</button>
+        <button class="next move-btn" onclick="addInfo()">Next <i class="fa-solid fa-arrow-right"></i></button>
+    </div></div>
+    <script>
+        const addInfo = () => {
+            const allergiesSelect = document.querySelector('input[name = "allergies"]');
+            const specialOccInput = document.querySelector('input[name = "special_occ"]');
+            const requestsInput = document.querySelector('textarea[name = "requests"]');
+
+            const additionalInfo = {
+                allergies: allergiesSelect.value,
+                specialOcc: specialOccInput.value,
+                requests: requestsInput.value 
+            }
+            console.log(additionalInfo);
+
+            localStorage.setItem('additionalInfo', JSON.stringify(additionalInfo));
+
+            window.location.href = '/payment';
+        }
+    //back to food order
+    const back = () => {
+	window.location.href = '/food_order';
+  }
+    </script>
+</body>
+</html>

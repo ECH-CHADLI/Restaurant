@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    --orange: #ffb000;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0, 0.9);
+}
+.all_form{
+    height: 100vh;
+    width: 100vw;
+}
+.pic-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.title-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.addinfo {
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--orange);
+    animation: glow-animation 1.5s ease-in-out infinite alternate; /* Animation */
+}
+
+.form {
+    padding: 20px;
+    border-radius: 0 20px 20px 0;
+    height: 550px;
+    /* background-image: url('https://img.freepik.com/free-photo/chef-working-together-professional-kitchen_23-2149727955.jpg?size=626&ext=jpg&ga=GA1.2.1192466145.1679532522&semt=ais');
+     */background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 20px 0 black;
+    color: white;
+}
+
+.pic img {
+    border-radius: 20px 0 0 20px;
+    height: 550px;
+    object-fit: cover;
+    margin-top: 3.5px;
+    box-shadow: 0 0 20px 0 black;
+}
+
+@keyframes glow-animation {
+    0% {
+        text-shadow: 0 0 5px var(--orange); /* Initial glow */
+    }
+    100% {
+        text-shadow: 0 0 10px var(--orange); /* Increased glow */
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+}
+
+.additional-topping {
+    width: 250px;
+    height: 100px;
+    object-fit: cover;
+}
+
+input, select, textarea {
+    margin: 5px 0 10px 20px;
+    padding: 10px;
+    width: 300px;
+    border: solid 2px black;
+    outline: none;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 120px;
+}
+
+/* back and next buttons */
+.back-next {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -52px;
+    z-index: 1000;
+    padding: 0px 20px;
+  
+  }
+  
+  .move-btn {
+    padding: 20px;
+    font-size: 18px;
+    color: #ffffff;
+    background: #1a1a1a;
+    border: 1px solid #272727;
+    box-shadow: 2.5px 2.5px 5px #c5c5c5,
+                -2.5px -2.5px 5px #ffffff;
+    transition: all 0.3s ;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    height: 5vh;
+  }
+  .move-btn:hover {
+    box-shadow: inset 4px 4px 12px #000000,
+               inset -4px -4px 12px #5a5a5a;
+    color: #666
+  } 
+  
+  .back {
+    margin-right: 250px;
+    
+    cursor: pointer;
+  }
+  
+  .next {
+    margin-left: 250px;
+    
+    cursor: pointer;
+  }
+
+/* responsivity */
+@media (max-width: 835px) {
+    .pic-form {
+        flex-direction: column;
+    }
+    .form {
+        border-radius: 0 0 20px 20px;
+        width: 500px;
+    }
+    .pic img {
+        width: 500px;
+        border-radius: 20px 20px 0 0;
+        object-fit: cover;
+        height: 350px;
+    }
+    .move-btn {
+        font-size: 14px;
+    }
+    .back {
+        margin-right: 100px;
+    }
+    .next {
+        margin-left: 100px;
+    }
+}
+@media (max-width: 520px) {
+    .pic img, .form {
+        width: 400px;
+    }
+    .form {
+        font-size: 15px;
+    }
+    .addinfo {
+        font-size: 30px;
+        font-weight: 500;
+    }
+    input, select, textarea {
+        width: 230px;
+    }
+}
