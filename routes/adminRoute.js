@@ -2,48 +2,147 @@ const express = require('express')
 const router = express.Router()
 const Reservations = require('../model/reservation');
 
-router.get('/get-reservations', async (req, res) => {
+// Show all reservations
+router.get('/reservations', async (req, res) => {
 
     try {
-        const reservations = await Reservations.find().sort({'date_exact': 1, 'times.time': 1}); // 1 is for ascending, -1 for descending
-        res.json(reservations);
+
+        const reservations = await Reservations.find()
+            .sort({'date_exact': 1, 'times.time': 1}) // 1 is for ascending, -1 for descending
+            .select('date_exact times.time times.reservations.user times.reservations.orderedFood.priceFood times.reservations.people times.reservations.seat times.reservations._id')
+            .exec();
+
+        //res.json(reservations);
+
+        res.render('admin/admin-reservations', {reservations: reservations}); 
     } catch(err) {
         res.status(500).json({message: error.message});
     }
 });
 
-router.get('/get-user', async (req, res) => {
+// Show a specific reservation
+router.get('/reservation/:id/:date/:time', async (req, res) => {
 
-    const date = req.params.date;
+    const date = new Date(req.params.date);
     const time = req.params.time;
-    const userName = req.params.userName;
-
-    // Validate date format
-    const isValidDate = /^\d{4}-\d{2}-\d{2}$/.test(date);
-    if (!isValidDate) {
-        return res.status(400).json({ message: 'Invalid date format. Date must be in YYYY-MM-DD format.' });
-    }
 
     try {
-        const reservation = await Reservations.find({
-            'date_exact': new Date(date),
-            'times.time': time,
-            'times.reservations.user': userName
-        }, { // the second parameter is called the "projection" object. It allows you to specify which fields you want to include or exclude from the query result.
-            'times.$': 1 // To return only the matched time slot
-        });
 
-        console.log(reservation)
+        const reservationObj =  await Reservations.findOne(
+            {'times.reservations._id': req.params.id}
+        ).exec(); // RETURNS THE DOCUMENT where the id is, but not the specific field the id represents
 
-        if (reservation.length === 0) {
-            return res.status(404).json({ message: 'No reservations found for the specified user.' });
-        }
+        // Put all reservations inside one flattened array to find the right position of the id
+        const reservation = reservationObj.times.flatMap(time => time.reservations).find(reservation => reservation._id.toString() === req.params.id);
 
-        const userReservation = reservation.times[0].reservations.find(reserv => reserv.user === userName);
-        res.json(userReservation);
+        //res.json(reservation);
+
+        res.render('admin/specific-reservation', {reservation, dateTimeObj: {date, time}})
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
 })
 
+// Show the input page that performs the update (Copy paste the last function)
+router.get('/reservation/update/:id/:date/:time', async (req, res) => {
+
+    const date = new Date(req.params.date);
+    const time = req.params.time;
+
+    try {
+
+        const reservationObj =  await Reservations.findOne(
+            {'times.reservations._id': req.params.id}
+        ).exec();
+
+        const reservation = reservationObj.times.flatMap(time => time.reservations).find(reservation => reservation._id.toString() === req.params.id);
+
+        res.render('admin/update-reservation', {reservation, dateTimeObj: {date, time}})
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+})
+
+// Update this specific reservation
+router.put('/reservation/:id', async (req, res) => {
+
+    try{
+
+        const updateReservation = req.body;
+        
+        const existingDate = await Reservations.findOne({
+            "date_exact": updateReservation.date_exact
+        });
+
+        if (existingDate) { 
+
+            const existingTime = existingDate.times.find(timeSlot => timeSlot.time === updateReservation.times[0].time); 
+
+            if (existingTime) {
+                
+                let existingId = existingTime.reservations.find(reservation => reservation._id.toString() === req.params.id);
+
+                if(existingId) {
+                
+                    existingId.seat = updateReservation.times[0].reservations[0].seat,
+                    //existingId.user = req.session.user.firstName + ' ' + req.session.user.lastName,
+                    existingId.user = "ddd",
+                    existingId.people = updateReservation.times[0].reservations[0].people,
+                    existingId.additionalForm = updateReservation.times[0].reservations[0].additionalForm,
+                    existingId.orderedFood = updateReservation.times[0].reservations[0].orderedFood
+    
+                    res.status(200).send(existingTime);
+                } else {
+
+                    existingTime.reservations.push({
+                        seat: updateReservation.times[0].reservations[0].seat,
+                        //user: req.session.user.firstName + ' ' + req.session.user.lastName, 
+                        user: "ddd",
+                        people: updateReservation.times[0].reservations[0].people,
+                        additionalForm: updateReservation.times[0].reservations[0].additionalForm,
+                        orderedFood: updateReservation.times[0].reservations[0].orderedFood
+                    })
+                }
+
+            } else {
+
+                await existingDate.updateOne(
+                    {"times.reservations._id": req.params.id},
+                    {"$pull": {"times.$.reservations": {_id: req.params.id}}}
+                );
+
+                existingDate.times.push({
+                    time: updateReservation.times[0].time,
+                    reservations: [{
+                        seat: updateReservation.times[0].reservations[0].seat,
+                        //user: req.session.user.firstName + ' ' + req.session.user.lastName, 
+                        user: "ddd",
+                        people: updateReservation.times[0].reservations[0].people,
+                        additionalForm: updateReservation.times[0].reservations[0].additionalForm,
+                        orderedFood: updateReservation.times[0].reservations[0].orderedFood
+                    }]
+                });
+
+                res.status(200).send(existingDate);
+            }
+            await existingDate.validate();
+            await existingDate.save();
+
+        } else { 
+
+            updateReservation.times[0].reservations[0].user = "ddd";
+            //updateReservation.times[0].reservations[0].user = req.session.user.firstName + ' ' + req.session.user.lastName;
+            const reserv = new Reservations(updateReservation);
+            await reserv.validate();
+            await reserv.save();
+            res.status(200).json(reserv); 
+        } 
+
+    } catch (error) {
+        res.status(500).json({message: error.message});
+    } 
+})
+
 module.exports = router;
+
+//TODO: Refactor the code

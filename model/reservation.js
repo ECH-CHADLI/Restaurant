@@ -17,7 +17,7 @@ const selectedFoodSchema = new Schema({
 
 const oneReservationSchema = new Schema({
     seat : {type: String,required: true},
-    additionalForm : [addFormSchema],
+    additionalForm : addFormSchema,
     user: { type: String, ref: 'User' }, //mongoose.Schema.Types.ObjectId
     orderedFood: [selectedFoodSchema],
     people: { type: String }

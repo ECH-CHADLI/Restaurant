@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Details</title>
+</head>
+<body>
+    <h1>Reservation Details</h1>
+    <form action="/reservation/<%= reservation._id %>" method="PUT">
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" value="<%= dateTimeObj.date %>"><br>
+
+        <label for="time">Time:</label>
+        <input type="text" id="time" name="time" value="<%= dateTimeObj.time %>"><br>
+
+        <label for="seat">Seat:</label>
+        <input type="text" id="seat" name="seat" value="<%= reservation.seat %>"><br>
+
+        <label for="user">User:</label>
+        <input type="text" id="user" name="user" value="<%= reservation.user %>"><br>
+
+        <label for="people">People:</label>
+        <input type="text" id="people" name="people" value="<%= reservation.people %>"><br>
+
+        <h2>Ordered Food:</h2>
+        <% reservation.orderedFood.forEach((food, index) => { %>
+            <label for="foodTitle<%= index %>">Food Title:</label>
+            <input type="text" id="foodTitle<%= index %>" name="foodTitle<%= index %>" value="<%= food.titleFood %>"><br>
+
+            <label for="foodPrice<%= index %>">Food Price:</label>
+            <input type="text" id="foodPrice<%= index %>" name="foodPrice<%= index %>" value="<%= food.priceFood %>"><br>
+
+            <label for="foodQuantity<%= index %>">Food Quantity:</label>
+            <input type="text" id="foodQuantity<%= index %>" name="foodQuantity<%= index %>" value="<%= food.quantityFood %>"><br>
+        <% }) %>
+
+        <h2>Additional Form:</h2>
+        <label for="allergies">Allergies:</label>
+        <input type="text" id="allergies" name="allergies" value="<%= reservation.additionalForm.allergies %>"><br>
+
+        <label for="occasion">Occasion:</label>
+        <input type="text" id="occasion" name="occasion" value="<%= reservation.additionalForm.occasion %>"><br>
+
+        <label for="requests">Requests:</label>
+        <input type="text" id="requests" name="requests" value="<%= reservation.additionalForm.requests %>"><br>
+
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

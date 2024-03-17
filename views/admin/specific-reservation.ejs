@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Details</title>
+</head>
+<body>
+    <h1>Reservation Details</h1>
+    <ul>
+        <li>
+            <strong>Date:</strong> <%= dateTimeObj.date %><br>
+            <strong>Time:</strong> <%= dateTimeObj.time %><br>
+            <strong>Seat:</strong> <%= reservation.seat %><br>
+            <strong>User:</strong> <%= reservation.user %><br>
+            <strong>People:</strong> <%= reservation.people %><br>
+        </li>
+    </ul>
+    <h2>Ordered Food:</h2>
+    <ul>
+        <% reservation.orderedFood.forEach(food => { %>
+            <li>
+                <strong>Title:</strong> <%= food.titleFood %><br>
+                <strong>Price:</strong> <%= food.priceFood %><br>
+                <strong>Quantity:</strong> <%= food.quantityFood %><br>
+            </li>
+        <% }) %>
+    </ul>
+    <h2>Additional Form:</h2>
+    <ul>
+        <li>
+            <strong>Allergies:</strong> <%= reservation.additionalForm.allergies %><br>
+            <strong>Occasion:</strong> <%= reservation.additionalForm.occasion %><br>
+            <strong>Requests:</strong> <%= reservation.additionalForm.requests %><br>
+        </li>
+    </ul>
+
+    <button type="submit" onClick="updateReservation('<%= reservation._id %>', '<%= dateTimeObj.date %>', '<%= dateTimeObj.time %>')">Update</button> <!-- arg are embedded with quotes to return a string -->
+    <button type="submit" formaction="/delete">Delete</button> <!-- Change form action for delete button -->
+
+    <script>
+        const updateReservation = (reservationId, reservationDate, reservationTime) => {
+            
+            window.location.href = `/admin/reservation/update/${reservationId}/${reservationDate}/${reservationTime}`; 
+        }
+    </script>
+</body>
+</html>

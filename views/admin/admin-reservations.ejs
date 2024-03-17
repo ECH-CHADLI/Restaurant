@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Details</title>
+</head>
+<body>
+    
+    <h1>Reservation details</h1>
+
+    <% reservations.forEach((reservation) => { %>
+
+        <h2>Date: <%= reservation.date_exact %></h2>
+        <ul>
+            <% reservation.times.forEach((time) => { %>
+                <li>Time: <%= time.time %></li>
+                <ul>
+                    <% time.reservations.forEach((r) => { %>
+                        <li><strong>User: <%= r.user %></strong></li>
+                        <li>Seat: <%= r.seat %></li>
+                        <li>People: <%= r.people %></li>
+                        <% let totalPrice = 0; %>
+                        <% r.orderedFood.forEach((food) => { %>
+                            <% totalPrice += parseInt(food.priceFood.slice(1))%>
+                        <% }) %>
+                        <li>Price: <%= totalPrice %></li>
+                        <button onclick="handleCheckIn('<%= r._id %>', '<%= reservation.date_exact %>', '<%= time.time %>')">Check In</button>
+                        <br />
+                    <% }) %>
+                </ul>
+            <% }) %>
+        </ul>
+
+    <% }) %>    
+
+    <script>
+        function handleCheckIn(reservationId, reservationDate, reservationTime) {
+            
+            window.location.href = `/admin/reservation/${reservationId}/${reservationDate}/${reservationTime}`; 
+        }
+    </script>
+
+</body>
+</html>

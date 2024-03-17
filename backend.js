@@ -75,16 +75,8 @@ app.get('/', (req, res) => {
     res.render('index.ejs')
 })
 app.use(express.static('public')); //adding the static files middleware in public dir, in order to access files directly like so /code.js
-const PORT = 3500;
+const PORT = 3000;
 app.listen(PORT, '127.0.0.1',()=>{
     console.log("server is running")
 });
 module.exports = { PORT }; 
-
-//get method returns the value of the set method(2nd parameter)
-
-/* use method => register middleware(2nd parameter) functions (has req and resp objects, and next),
-for parsing data, auth, error handling...*/
-
-/* Sessions allow you to store user specific data on the server, 
-and the client is identified through a session ID stored in a cookie */
